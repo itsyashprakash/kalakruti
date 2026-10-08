@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kalakruti – hand-embroidered custom gifts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Bricolage+Grotesque:opsz,wght@12..96,300..800&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f7f5dc;--maroon:#5b2227;--pink:#ec008c;--copper:#cd8c5d;--blush:#f2c7de;--pad:clamp(24px,6vw,96px);
+--serif:'Fraunces',Georgia,serif;--sans:'Bricolage Grotesque',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--cream);color:var(--maroon);font:400 clamp(16px,1.1vw,18px)/1.6 var(--sans);overflow-x:hidden;padding-top:env(safe-area-inset-top,0)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;background:repeating-linear-gradient(0deg,rgba(91,34,39,.03) 0 1px,transparent 1px 4px),repeating-linear-gradient(90deg,rgba(91,34,39,.03) 0 1px,transparent 1px 4px)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px;border-radius:6px}
+.rail{position:fixed;left:14px;top:0;bottom:0;width:2px;z-index:20;background:repeating-linear-gradient(var(--copper) 0 6px,transparent 6px 12px);opacity:.7}
+.rail i{position:absolute;left:-5px;top:calc(var(--p,0)*calc(100% - 12px));width:12px;height:12px;border-radius:50%;background:var(--pink);box-shadow:0 0 0 5px rgba(236,0,140,.15)}
+nav{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:clamp(14px,3vw,40px);padding:10px var(--pad);background:color-mix(in srgb,var(--cream) 82%,transparent);backdrop-filter:blur(10px)}
+nav .logo{margin-right:auto}
+nav a{text-decoration:none;font-weight:500;font-size:.95rem}
+nav a.pill{margin-left:0}
+.btn{display:inline-block;padding:.85em 1.5em;border-radius:99px;background:var(--maroon);color:var(--cream);font-weight:600;text-decoration:none;transition:transform .5s cubic-bezier(.2,.8,.2,1),background .4s}
+.btn:hover{transform:translateY(-3px) rotate(-1.5deg);background:var(--pink)}
+.btn.alt{background:transparent;color:var(--maroon);box-shadow:inset 0 0 0 2px var(--maroon)}
+.btn.alt:hover{background:var(--blush)}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:clamp(24px,5vw,80px);padding:clamp(32px,6vw,80px) var(--pad) clamp(64px,9vw,140px);min-height:calc(100svh - 64px)}
+.hero h2{font:300 clamp(2.6rem,6.2vw,6rem)/.98 var(--serif);font-variation-settings:'opsz' 144,'SOFT' 100,'WONK' 1;letter-spacing:-.03em}
+.hero h2 span{display:block;font-style:italic;font-weight:600;padding-left:.9em}
+.hero p.sub{max-width:34ch;margin:1.6rem 0 2rem;font-size:1.15em}
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.status{display:inline-flex;gap:10px;align-items:center;margin-top:2rem;font-size:.9rem;background:var(--blush);padding:.45em 1em;border-radius:99px}
+.status b{width:9px;height:9px;border-radius:50%;background:var(--pink);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.7);opacity:.4}}
+.hoopwrap{perspective:900px;justify-self:center;width:min(86vw,540px)}
+.hoop{position:relative;aspect-ratio:1;border-radius:50%;padding:14px;background:linear-gradient(135deg,#e2ad82,var(--copper) 45%,#9b6339);box-shadow:0 30px 60px -20px rgba(91,34,39,.45);transition:transform .8s cubic-bezier(.2,.8,.2,1);transform:rotateX(var(--rx,0)) rotateY(var(--ry,0)) rotate(-4deg)}
+.hoop::before{content:"";position:absolute;left:50%;top:-22px;width:46px;height:34px;margin-left:-23px;border-radius:6px;background:var(--maroon);box-shadow:inset 0 -8px 0 rgba(0,0,0,.25)}
+.fabric{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fffdf2,#f3eed0);box-shadow:inset 0 6px 18px rgba(91,34,39,.25);display:grid;place-items:center;overflow:hidden}
+.fabric svg{width:100%;height:auto}
+.wm{font:700 112px var(--serif);font-variation-settings:'opsz' 144,'SOFT' 100,'WONK' 1;fill:transparent;stroke:var(--maroon);stroke-width:1.6;stroke-dasharray:7 6;animation:run 2.2s linear infinite,fill 1.2s 2.2s forwards}
+@keyframes run{to{stroke-dashoffset:-26}}
+@keyframes fill{to{fill:var(--maroon);stroke:var(--blush)}}
+.lotus{opacity:0;animation:bloom 1.6s 3.1s cubic-bezier(.2,.8,.2,1) forwards;transform-origin:260px 178px}
+@keyframes bloom{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:none}}
+section{padding:clamp(64px,10vw,150px) var(--pad)}
+h3{font:400 clamp(2rem,4.6vw,4.2rem)/1.02 var(--serif);font-variation-settings:'opsz' 144,'SOFT' 80;letter-spacing:-.025em;max-width:16ch}
+.lede{max-width:42ch;margin:1rem 0 2.4rem}
+.finder{background:var(--blush);border-radius:48px 48px 160px 48px;margin-inline:calc(var(--pad)/2);padding-inline:calc(var(--pad)/2)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 1.4rem;border:0;padding:0}
+.chips legend{font:italic 500 1.25rem var(--serif);margin-bottom:.6rem}
+.chips label{cursor:pointer}
+.chips input{position:absolute;opacity:0}
+.chips span{display:inline-block;padding:.5em 1.2em;border-radius:99px;box-shadow:inset 0 0 0 2px var(--maroon);transition:all .4s cubic-bezier(.2,.8,.2,1)}
+.chips input:checked+span{background:var(--maroon);color:var(--cream);transform:rotate(-2deg) scale(1.05)}
+.chips input:focus-visible+span{outline:3px solid var(--pink);outline-offset:3px}
+.idea{margin-top:1.8rem;max-width:30ch;font:300 clamp(1.6rem,3.2vw,2.8rem)/1.15 var(--serif);font-variation-settings:'opsz' 144,'SOFT' 100;min-height:5.2em}
+.idea.sw{animation:sw .7s cubic-bezier(.2,.8,.2,1)}
+@keyframes sw{from{opacity:0;transform:translateY(12px) rotate(.6deg)}}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(14px,2vw,28px);margin-top:3rem}
+.card{position:relative;padding:clamp(20px,3vw,40px);min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.card:hover{transform:translateY(-6px) rotate(-.6deg)}
+.card svg{position:absolute;inset:0 0 auto 0;width:100%;height:62%}
+.card h4{font:600 1.7rem/1.1 var(--serif);font-variation-settings:'opsz' 72,'SOFT' 100}
+.card p{max-width:32ch;font-size:.95rem}
+.c1{grid-column:span 7;background:var(--blush);border-radius:28px 140px 28px 28px}
+.c2{grid-column:span 5;background:var(--maroon);color:var(--cream);border-radius:140px 28px 28px 28px}
+.c3{grid-column:span 5;background:var(--copper);border-radius:28px;color:var(--maroon)}
+.c4{grid-column:span 7;border:3px dashed var(--copper);border-radius:28px 28px 28px 140px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,4vw,60px);margin-top:3rem;position:relative}
+.steps::before{content:"";position:absolute;left:0;right:0;top:22px;border-top:3px dashed var(--copper)}
+.steps div{position:relative}
+.steps i{display:block;width:44px;height:44px;border-radius:50%;background:var(--pink);margin-bottom:1rem;box-shadow:0 0 0 8px var(--cream)}
+.steps b{font:600 1.35rem var(--serif);display:block}
+.soon{background:var(--maroon);color:var(--cream);border-radius:48px;margin-inline:calc(var(--pad)/2);padding-inline:calc(var(--pad)/2)}
+.soon h3{max-width:14ch}
+.soon .btn{background:var(--cream);color:var(--maroon)}
+.soon .btn:hover{background:var(--pink);color:#fff}
+.soon .btn.alt{background:transparent;color:var(--cream);box-shadow:inset 0 0 0 2px var(--cream)}
+footer{display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;padding:56px var(--pad) calc(40px + env(safe-area-inset-bottom,0))}
+
+.logo{position:relative;display:inline-flex;align-items:center;gap:.22em;padding-bottom:.2em;font:800 1.75rem/1 var(--serif);font-variation-settings:'opsz' 144,'SOFT' 100,'WONK' 1;letter-spacing:-.035em;text-decoration:none;color:var(--maroon)}
+.logo svg{width:1.15em;height:.72em;margin-right:.05em}
+.logo em{font-weight:350;font-style:italic;color:var(--copper);margin-left:-.12em}
+.logo::after{content:"";position:absolute;left:1.5em;right:0;bottom:0;height:2px;background:repeating-linear-gradient(90deg,var(--copper) 0 6px,transparent 6px 11px)}
+.logo:hover::after{animation:march .8s linear infinite}
+@keyframes march{to{background-position-x:11px}}
+.logo.big{font-size:clamp(2.6rem,6vw,4.4rem)}
+canvas{position:fixed;inset:0;pointer-events:none;z-index:40}
+@media(max-width:820px){.hero{grid-template-columns:1fr;min-height:0}.hoopwrap{order:-1}.c1,.c2,.c3,.c4{grid-column:span 12}.steps{grid-template-columns:1fr}.steps::before{display:none}.rail{display:none}nav a:not(.btn){display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.wm{fill:var(--maroon);stroke:var(--blush)}.lotus{opacity:1}}
+</style>
+</head>
+<body>
+<div class="rail" aria-hidden="true"><i></i></div>
+<canvas id="trail" aria-hidden="true"></canvas>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<linearGradient id="lg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ec008c"/><stop offset="1" stop-color="#f2c7de"/></linearGradient>
+<symbol id="sf" viewBox="-40 -40 80 80" overflow="visible"><circle r="26" fill="none" stroke="#e8a920" stroke-width="18" stroke-dasharray="6 3.2"/><circle r="12" fill="#5a2d12"/><circle r="8" fill="none" stroke="#a5642a" stroke-width="3" stroke-dasharray="1.5 3" stroke-linecap="round"/></symbol>
+<symbol id="lo" viewBox="-50 -50 100 60" overflow="visible"><g fill="url(#lg)"><path d="M0 0C-16-10-14-38 0-48 14-38 16-10 0 0Z"/><path d="M0 0C-24-4-36-24-34-34 -18-32-4-18 0 0Z" opacity=".85"/><path d="M0 0C24-4 36-24 34-34 18-32 4-18 0 0Z" opacity=".85"/><path d="M0 0C-30 6-48-6-50-14-32-18-10-12 0 0Z" opacity=".7"/><path d="M0 0C30 6 48-6 50-14 32-18 10-12 0 0Z" opacity=".7"/></g></symbol>
+<symbol id="wf" viewBox="-12 -90 24 90" overflow="visible"><path d="M0 0C-4-30 4-50 0-70" fill="none" stroke="#4f7a3a" stroke-width="2.4" stroke-linecap="round"/><g fill="currentColor"><circle cy="-76" r="7"/><circle cy="-62" r="6"/><circle cy="-50" r="5"/></g></symbol>
+</defs></svg>
+
+<nav>
+<a class="logo" href="#" aria-label="Kalakruti, home"><svg viewBox="0 0 48 30" aria-hidden="true"><use href="#lo" width="48" height="30"/></svg>Kala<em>kruti</em></a>
+<a href="#finder">Gift finder</a><a href="#pieces">What we stitch</a><a href="#how">How it works</a>
+<a class="btn" href="https://wa.me/918767554010?text=Hi%20Kalakruti!%20I'd%20like%20a%20custom%20gift." target="_blank" rel="noopener">Order on WhatsApp</a>
+</nav>
+
+<header class="hero">
+<div>
+<h2>Crafted by hand,<span>given with heart.</span></h2>
+<p class="sub">Custom embroidered gifts for him, for her, for whoever you're thinking of. Tell us the story and we'll stitch it.</p>
+<div class="row">
+<a class="btn" href="#finder">Find a gift idea</a>
+<a class="btn alt" href="https://www.instagram.com/kalakruti.by_diksha/" target="_blank" rel="noopener">See our stitches</a>
+</div>
+<p class="status"><b></b>First collection is being stitched now</p>
+</div>
+<div class="hoopwrap"><div class="hoop" id="hoop"><div class="fabric">
+<svg viewBox="0 0 520 300" role="img" aria-label="Kalakruti, stitched in thread">
+<text class="wm" x="260" y="140" text-anchor="middle" textLength="450" lengthAdjust="spacingAndGlyphs">Kalakruti</text>
+<g class="lotus"><use href="#lo" x="236" y="180" width="48" height="29"/></g>
+<path d="M120 215C150 190 170 225 205 208M300 208C335 224 360 190 400 214" fill="none" stroke="#cd8c5d" stroke-width="3" stroke-dasharray="7 6" stroke-linecap="round"/>
+</svg></div></div></div>
+</header>
+
+<section id="finder" class="finder">
+<h3>Who are we stitching for?</h3>
+<p class="lede">Pick two things and get a starting idea. We'll shape it with you on chat.</p>
+<fieldset class="chips" data-k="who"><legend>It's for</legend>
+<label><input type="radio" name="who" value="him"><span>Him</span></label>
+<label><input type="radio" name="who" value="her" checked><span>Her</span></label>
+<label><input type="radio" name="who" value="both"><span>Both of them</span></label></fieldset>
+<fieldset class="chips" data-k="occ"><legend>The occasion</legend>
+<label><input type="radio" name="occ" value="birthday" checked><span>Birthday</span></label>
+<label><input type="radio" name="occ" value="wedding"><span>Wedding</span></label>
+<label><input type="radio" name="occ" value="anniversary"><span>Anniversary</span></label>
+<label><input type="radio" name="occ" value="none"><span>Just because</span></label></fieldset>
+<p class="idea" id="idea" aria-live="polite"></p>
+<a class="btn" id="ask" href="#" target="_blank" rel="noopener">Ask for this on WhatsApp</a>
+</section>
+
+<section id="pieces">
+<h3>Things we love to stitch</h3>
+<p class="lede">Every piece is made to order, so nothing is mass-printed and nothing repeats by accident.</p>
+<div class="grid">
+<article class="card c1"><svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><g fill="none" stroke="#4f7a3a" stroke-width="3" stroke-linecap="round"><path d="M200 200C200 160 190 140 170 110M200 200C205 150 225 130 250 95M205 200C215 170 270 150 285 130"/></g><use href="#sf" x="130" y="60" width="80" height="80"/><use href="#sf" x="215" y="40" width="64" height="64"/><use href="#sf" x="255" y="95" width="60" height="60"/></svg><h4>Hoodies &amp; tees</h4><p>A tiny bouquet over the heart, or initials on the cuff.</p></article>
+<article class="card c2"><svg viewBox="0 0 300 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><g><use href="#wf" x="50" y="60" width="26" height="100" style="color:#b9a3e8"/><use href="#wf" x="95" y="90" width="26" height="100" style="color:#ff7a6a"/><use href="#wf" x="140" y="40" width="26" height="100" style="color:#8fb8ff"/><use href="#wf" x="185" y="80" width="26" height="100" style="color:#f2c7de"/><use href="#wf" x="230" y="55" width="26" height="100" style="color:#e8a920"/></g></svg><h4>Tote bags</h4><p>Wildflower meadows, with a date or a name tucked in.</p></article>
+<article class="card c3"><svg viewBox="0 0 300 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><path d="M30 20h240v110q0 40-120 60Q30 170 30 130Z" fill="#b9d6ee"/><path d="M40 30v100q0 25 110 45" fill="none" stroke="#5b2227" stroke-width="3" stroke-dasharray="9 6"/><use href="#sf" x="110" y="60" width="56" height="56"/><use href="#sf" x="165" y="85" width="50" height="50"/><use href="#sf" x="215" y="50" width="46" height="46"/></svg><h4>Denim pockets</h4><p>Give old jeans a garden to grow out of.</p></article>
+<article class="card c4"><svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><circle cx="200" cy="105" r="78" fill="#fffdf2" stroke="#cd8c5d" stroke-width="10"/><use href="#lo" x="168" y="85" width="64" height="38"/><path d="M130 130Q200 160 270 130" fill="none" stroke="#cd8c5d" stroke-width="3" stroke-dasharray="7 6" stroke-linecap="round"/></svg><h4>Hoop art</h4><p>Names, pets, places and little moments, framed and ready to hang.</p></article>
+</div>
+</section>
+
+<section id="how">
+<h3>From your story to a stitched gift</h3>
+<div class="steps">
+<div><i></i><b>Tell us who it's for</b>Share the person, the occasion and any colours or flowers they love.</div>
+<div><i></i><b>We sketch, you approve</b>You see the design and confirm it before the first stitch.</div>
+<div><i></i><b>Stitched and delivered</b>Made by hand, wrapped with care and sent to you or straight to them.</div>
+</div>
+</section>
+
+<section class="soon">
+<h3>Be first when the shop opens.</h3>
+<p class="lede">Message us and we'll let you know the day the first collection is ready.</p>
+<div class="row">
+<a class="btn" href="https://wa.me/918767554010?text=Hi%20Kalakruti!%20Please%20notify%20me%20when%20the%20collection%20opens." target="_blank" rel="noopener">Notify me on WhatsApp</a>
+<a class="btn alt" href="https://www.instagram.com/kalakruti.by_diksha/" target="_blank" rel="noopener">Follow @kalakruti.by_diksha</a>
+</div>
+</section>
+
+<footer>
+<a class="logo big" href="#" aria-label="Kalakruti, back to top"><svg viewBox="0 0 48 30" aria-hidden="true"><use href="#lo" width="48" height="30"/></svg>Kala<em>kruti</em></a>
+<p>Crafted by hand, given with heart.<br><a href="tel:+918767554010">+91 87675 54010</a></p>
+</footer>
+
+<script>
+const $=s=>document.querySelector(s),rail=$('.rail');
+addEventListener('scroll',()=>{const m=document.documentElement.scrollHeight-innerHeight;rail.style.setProperty('--p',m>0?scrollY/m:0)},{passive:true});
+const piece={him:'sweatshirt or tee with a small motif over the heart',her:'tote bag with a wildflower meadow along the bottom',both:'framed hoop with a lotus and the two of you'};
+const det={birthday:'stitched with the birth flower and the date',wedding:'stitched with your initials, the wedding date and a lotus',anniversary:'stitched with the year you met, kept small and quiet',none:'stitched with a favourite flower in colours they love'};
+const who={him:'him',her:'her',both:'both of them'};
+function upd(){const w=document.querySelector('[name=who]:checked').value,o=document.querySelector('[name=occ]:checked').value;
+const t='A '+piece[w]+', '+det[o]+'.',el=$('#idea');el.textContent=t;el.classList.remove('sw');void el.offsetWidth;el.classList.add('sw');
+$('#ask').href='https://wa.me/918767554010?text='+encodeURIComponent('Hi Kalakruti! I want a custom gift for '+who[w]+(o=='none'?'':' ('+o+')')+'. Idea: '+t)}
+document.querySelectorAll('.chips input').forEach(i=>i.addEventListener('change',upd));upd();
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches,hoop=$('#hoop');
+if(!rm){addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;hoop.style.setProperty('--ry',((e.clientX/innerWidth-.5)*10)+'deg');hoop.style.setProperty('--rx',((.5-e.clientY/innerHeight)*8)+'deg')});
+const c=$('#trail'),x=c.getContext('2d'),pts=[];let dpr=devicePixelRatio||1;
+const fit=()=>{c.width=innerWidth*dpr;c.height=innerHeight*dpr;x.scale(dpr,dpr)};fit();addEventListener('resize',fit);
+addEventListener('pointermove',e=>{if(e.pointerType==='mouse')pts.push({x:e.clientX,y:e.clientY,t:performance.now()})});
+(function f(){x.clearRect(0,0,innerWidth,innerHeight);const n=performance.now();while(pts.length&&n-pts[0].t>1100)pts.shift();
+x.setLineDash([7,7]);x.lineWidth=2;x.lineCap='round';
+for(let i=1;i<pts.length;i++){x.globalAlpha=Math.max(0,1-(n-pts[i].t)/1100);x.strokeStyle=i%2?'#ec008c':'#cd8c5d';x.beginPath();x.moveTo(pts[i-1].x,pts[i-1].y);x.lineTo(pts[i].x,pts[i].y);x.stroke()}
+requestAnimationFrame(f)})()}
+</script>
+</body>
+</html>
